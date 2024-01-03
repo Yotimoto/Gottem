@@ -1,2 +1,2 @@
 # Gottem
-HA HA, GOTTEM
+HA, GOTTEM
