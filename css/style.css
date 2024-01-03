@@ -1,0 +1,27 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #1a1a1a;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+#header {
+    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+    letter-spacing: 1rem;
+    font-size: 10rem;
+    color: white;
+    -webkit-text-stroke: .4rem #000;
+}
+
+#hand {
+    height: 65vh;
+}
+
