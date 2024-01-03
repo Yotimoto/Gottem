@@ -6,12 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GOTTEM</title>
   <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="HA, GOTTEM">
-  
+  <meta name="description" content="HA, GOTTEM! HA! GOTTEM, HAHAHAHAHA">
+
   <meta property="og:title" content="GOTTEM">
+  <meta property="og:description" content="HA, GOTTEM! HA! GOTTEM, HAHAHAHAHA">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gottem.meme">
-  <meta property="og:image" content="">
+  <meta property="og:image" content="https://gottem.meme/img/gottem-x1000.png">
 
   <link rel="icon" href="img/gottem.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
@@ -21,10 +22,37 @@
 </head>
 
 <body>
-    <main>
-        <img id="hand" src="img/gottem.svg" alt="GOTTEM"/>
-        <h1 id="header">GOTTEM</h1>
-    </main>
+  <main>
+    <section id="hand-wrapper">
+      <img id="hand" src="img/gottem.svg" alt="GOTTEM" />
+      <div id="hand-control">▶️</div>
+    </section>
+    <h1 id="header">GOTTEM</h1>
+    <audio id="audio" loop autoplay>
+      <source src="media/gottem.ogg" type="audio/ogg">
+      <source src="media/gottem.mp3" type="audio/mpeg">
+      Your browser does not support the audio element!
+    </audio>
+  </main>
+
+  <script>
+    var audio = document.getElementById("audio");
+    var controlButton = document.getElementById("hand-control");
+
+    function playAudio() {
+      if (audio.paused) {
+        audio.play();
+        controlButton.textContent = '⏸️';
+      } else {
+        audio.pause();
+        controlButton.textContent = '▶️';
+      }
+      audio.addEventListener('ended', function () {
+        controlButton.textContent = '▶️';
+      });
+    }
+    controlButton.addEventListener("click", playAudio);
+  </script>
 </body>
 
 </html>
