@@ -5,20 +5,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GOTTEM</title>
-  <link rel="stylesheet" href="css/style.css">
   <meta name="description" content="HA, GOTTEM! HA! GOTTEM, HAHAHAHAHA">
-
+  
   <meta property="og:title" content="GOTTEM">
   <meta property="og:description" content="HA, GOTTEM! HA! GOTTEM, HAHAHAHAHA">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gottem.meme">
   <meta property="og:image" content="https://gottem.meme/img/gottem-x1000.png">
-
   <link rel="icon" href="img/gottem.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
-
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="https://gottem.meme/img/gottem-x1000.png">
   <meta name="theme-color" content="#f2f2f2">
+  
+  <link rel="stylesheet" href="css/micromodal.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -28,6 +27,7 @@
       <div id="hand-control">▶️</div>
     </section>
     <h1 id="header">GOTTEM</h1>
+    <button id="credit-modal-button" data-micromodal-trigger="credit-modal">❔</button>
     <audio id="audio" loop autoplay>
       <source src="media/gottem.ogg" type="audio/ogg">
       <source src="media/gottem.mp3" type="audio/mpeg">
@@ -35,7 +35,34 @@
     </audio>
   </main>
 
+  <div class="modal micromodal-slide" id="credit-modal" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="credit-modal-title">
+        <header class="modal__header">
+          <h2 class="modal__title" id="credit-modal-title">
+            GOTTEM
+          </h2>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <article class="modal__content" id="credit-modal-content">
+          <p>
+            Hand asset created by <a href="https://thenounproject.com/icon/hand-4569195/" target="_blank">Humantech from the Noun Project</a>.
+          </p>
+          <p>
+            Audio is from <a href="https://www.youtube.com/watch?v=Mf28BcQGHRI" target="_blank">YouTube</a>.
+          </p>
+        </article>
+        <footer class="modal__footer">
+          <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
   <script>
+    MicroModal.init();
+
     var audio = document.getElementById("audio");
     var controlButton = document.getElementById("hand-control");
 
